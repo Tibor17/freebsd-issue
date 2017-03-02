@@ -18,6 +18,40 @@
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>main</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>main</finalName>
+                            <archive>
+                                <index>true</index>
+                                <manifest>
+                                    <mainClass>Main</mainClass>
+                                    <addClasspath>true</addClasspath>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>fork</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>fork</finalName>
+                            <archive>
+                                <index>true</index>
+                                <manifest>
+                                    <mainClass>Fork</mainClass>
+                                    <addClasspath>true</addClasspath>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
                     <archive>
                         <index>true</index>

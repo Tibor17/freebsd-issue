@@ -11,7 +11,7 @@ import static java.lang.System.nanoTime;
 public class Fork
 {
     private static final String LINE = "01234567890123456789012345678901234567890123456789\n";
-    private static final Logger LOG = Logger.getLogger(Fork.class.getName());
+    /*private static final Logger LOG = Logger.getLogger(Fork.class.getName());
 
     static {
         try {
@@ -22,10 +22,10 @@ public class Fork
         } catch (IOException e) {
             throw new IllegalStateException(e.getLocalizedMessage(), e);
         }
-    }
+    }*/
 
     public static void main(String... args) throws Exception {
-        LOG.info(System.currentTimeMillis() + " main() started");
+        //LOG.info(System.currentTimeMillis() + " main() started");
 
         for (int i = 0; i < 500; i++) {
             // 50 x 500 chars = 25000 characters
@@ -33,11 +33,11 @@ public class Fork
             System.out.flush();
         }
 
-        LOG.info(System.currentTimeMillis() + " main() after printed system properties");
+        //LOG.info(System.currentTimeMillis() + " main() after printed system properties");
 
         Thread.sleep(3_000);
 
-        LOG.info(System.currentTimeMillis() + " main() returned");
+        //LOG.info(System.currentTimeMillis() + " main() returned");
 
         /*final Semaphore semaphore = new Semaphore(0);
         Thread t = new Thread() {

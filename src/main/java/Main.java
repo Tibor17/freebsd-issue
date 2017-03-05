@@ -79,9 +79,9 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
                         "/X",
                         "/C",*/
 
-                        "cd",
+                        /*"cd",
                         quoteIfHasSpace(userDir.getAbsolutePath()),
-                        "&&",
+                        "&&",*/
                         quoteIfHasSpace(executable.getAbsolutePath()),
                         "-jar",
                         quoteIfHasSpace(jar),
@@ -94,7 +94,7 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
         // CMD from maven-shared-utils
         Commandline cli = new Commandline();
         cli.setExecutable(executable.getCanonicalPath());//"/usr/local/openjdk7/jre/bin/java"
-        cli.setWorkingDirectory(userDir);
+        //cli.setWorkingDirectory(userDir);
         cli.createArg().setValue("-jar");
         cli.createArg().setValue(jar);
         // dummy arguments

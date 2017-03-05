@@ -71,13 +71,11 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
         String jar = new File(userDir, "exec-1.0-fork" + idx + ".jar").getCanonicalPath();
         String[] cmd =
                 {
-                        /*
                         "/bin/sh",
                         "-c",
-                        */
-                        "CMD",
+                        /*"CMD",
                         "/X",
-                        "/C",
+                        "/C",*/
 
                         "cd",
                         quoteIfHasSpace(userDir.getAbsolutePath()),
@@ -91,7 +89,7 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
                         "surefire_11427250543530051033tmp",
                 };
 
-        Commandline cli = new Commandline();
+        /*Commandline cli = new Commandline();
         cli.setExecutable(executable.getCanonicalPath());//"/usr/local/openjdk7/jre/bin/java"
         cli.setWorkingDirectory(userDir);
         cli.createArg().setValue("-jar");
@@ -103,7 +101,7 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
         cli.createArg().setValue("surefire_11427250543530051033tmp");
         //CommandLineUtils.executeCommandLine()
         List<String> cliCmd = cli.getShell().getShellCommandLine(cli.getArguments());
-        cmd = cliCmd.toArray(new String[cliCmd.size()]);
+        cmd = cliCmd.toArray(new String[cliCmd.size()]);*/
 
         System.out.println(Arrays.toString(cmd));
 

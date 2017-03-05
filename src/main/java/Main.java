@@ -69,6 +69,8 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
 
     private static Process startProcess(File executable, File userDir, int idx) throws IOException {
         String jar = new File(userDir, "exec-1.0-fork" + idx + ".jar").getCanonicalPath();
+
+        // synthetic command
         String[] cmd =
                 {
                         "/bin/sh",
@@ -89,7 +91,8 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
                         "surefire_11427250543530051033tmp",
                 };
 
-        /*Commandline cli = new Commandline();
+        // CMD from maven-shared-utils
+        Commandline cli = new Commandline();
         cli.setExecutable(executable.getCanonicalPath());//"/usr/local/openjdk7/jre/bin/java"
         cli.setWorkingDirectory(userDir);
         cli.createArg().setValue("-jar");
@@ -101,7 +104,7 @@ redirectTo(process.getOutputStream(), process.getInputStream());*/
         cli.createArg().setValue("surefire_11427250543530051033tmp");
         //CommandLineUtils.executeCommandLine()
         List<String> cliCmd = cli.getShell().getShellCommandLine(cli.getArguments());
-        cmd = cliCmd.toArray(new String[cliCmd.size()]);*/
+        cmd = cliCmd.toArray(new String[cliCmd.size()]);
 
         System.out.println(Arrays.toString(cmd));
 

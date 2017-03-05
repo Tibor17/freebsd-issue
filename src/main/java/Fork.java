@@ -27,13 +27,15 @@ public class Fork
     public static void main(String... args) throws Exception {
         LOG.info(System.currentTimeMillis() + " main() started");
 
-        for (int i = 0; i < 200; i++) {
-            // 50 x 200 chars = 10 000 characters
+        for (int i = 0; i < 500; i++) {
+            // 50 x 500 chars = 25000 characters
             System.out.print(LINE);
             System.out.flush();
         }
 
-        final Semaphore semaphore = new Semaphore(0);
+        Thread.sleep(3_000);
+
+        /*final Semaphore semaphore = new Semaphore(0);
         Thread t = new Thread() {
             @Override
             public void run() {
@@ -47,7 +49,7 @@ public class Fork
         };
         t.setDaemon(true);
         t.start();
-        semaphore.acquire();
+        semaphore.acquire();*/
         //int read = System.in.read();
         //read = System.in.read();
         //System.exit(0);

@@ -18,6 +18,12 @@
             <groupId>org.apache.maven.shared</groupId>
             <artifactId>maven-shared-utils</artifactId>
             <version>0.9-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.code.findbugs</groupId>
+                    <artifactId>jsr305</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
@@ -33,28 +39,44 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <finalName>main</finalName>
+                            <classifier>main</classifier>
                             <archive>
                                 <index>true</index>
                                 <manifest>
                                     <mainClass>Main</mainClass>
                                     <addClasspath>true</addClasspath>
+                                    <classpathPrefix>file:/${maven.repo.local}/</classpathPrefix>
+                                    <classpathLayoutType>repository</classpathLayoutType>
                                 </manifest>
                             </archive>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>fork</id>
+                        <id>fork1</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <finalName>fork</finalName>
+                            <classifier>fork1</classifier>
                             <archive>
                                 <index>true</index>
                                 <manifest>
                                     <mainClass>Fork</mainClass>
-                                    <addClasspath>true</addClasspath>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>fork2</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>fork2</classifier>
+                            <archive>
+                                <index>true</index>
+                                <manifest>
+                                    <mainClass>Fork</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
@@ -65,7 +87,6 @@
                         <index>true</index>
                         <manifest>
                             <mainClass>Exec</mainClass>
-                            <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
                 </configuration>

@@ -33,7 +33,11 @@ public class Fork
             System.out.flush();
         }
 
+        LOG.info(System.currentTimeMillis() + " main() after printed system properties");
+
         Thread.sleep(3_000);
+
+        LOG.info(System.currentTimeMillis() + " main() returned");
 
         /*final Semaphore semaphore = new Semaphore(0);
         Thread t = new Thread() {

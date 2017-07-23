@@ -1,6 +1,6 @@
 # freebsd-issue 
     
-    Uses Java 7 and Maven 3.0.x    
+Uses Java 7 and Maven 3.0.x
     
 java -jar exec-1.0.jar  
     
